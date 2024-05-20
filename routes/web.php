@@ -29,8 +29,11 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::middleware('auth')->group(function() {
-    
+    Route::get('dashboard', function() {
+        Route::get('dashboard', function() {
+        return view('dashboard');
+        })->name('dashboard');
+    });
+    // ! Idk Atas
+    Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
 });
-Route::get('dashboard', function() {
-    return view('dashboard');
-})->name('dashboard');
